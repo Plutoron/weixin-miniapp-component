@@ -1,0 +1,49 @@
+<view class="mod-radio w100 {{layout === 'flex' ? 'FBH FBW' : 'normal'}} FBJS {{className}} {{plain ? '' : 'BGF'}}">
+  <block wx:if="{{layout === 'normal'}}">
+		<view
+			class="radio-item FBH fc9 {{selectedValue === item.value ? 'select' : ''}}"
+			wx:for="{{dataSource}}"
+			wx:key="{{index}}"
+			bindtap="_bindRadioItem"
+			data-value="{{item.value}}"
+			data-index="{{index}}"
+		>
+			<view class="icon mr20 FBH FBAC FBJC">
+				<image 
+					wx:if="{{selectedValue === item.value }}" 
+					src="../../images/check.svg" 
+					class="check"
+				/>
+			</view>
+			<view class="fs28 FB1">
+				{{item[alias]}} 
+				<text wx:if="{{item.comment}}" class="fw200">{{item.comment}}</text>
+			</view>
+			<view wx:if="{{index !== dataSource.length - 1}}" class="border-bottom" />
+		</view>
+	</block>
+
+  <block wx:if="{{layout === 'flex'}}">
+	  <view
+			class="radio-item FBH FBAC pl30 mb20 fc9 {{selectedValue === item.value ? 'select' : ''}}"
+			wx:for="{{dataSource}}"
+			wx:key="{{index}}"
+			bindtap="_bindRadioItem"
+			data-value="{{item.value}}"
+			data-index="{{index}}"
+			style="width: {{perLineNum === 2 ? '50%' : '33%'}}"
+		>
+			<view class="icon mr20 FBH FBAC FBJC">
+				<image 
+					wx:if="{{selectedValue === item.value }}" 
+					src="../../images/check.svg" 
+					class="check"
+				/>
+			</view>
+			<view class="fs28 FB1 omit">
+				{{item[alias]}}
+				<text wx:if="{{item.comment}}" class="fw200">{{item.comment}}</text>
+			</view>
+		</view>
+	</block>
+</view>

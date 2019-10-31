@@ -1,0 +1,53 @@
+.mod-modal{
+	background-color: rgba(0,0,0, .5);
+	z-index: 1000;
+}
+
+.mod-modal .mod-modal-container{
+	width: 560rpx;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	animation: animate ease .2s;
+}
+
+@keyframes animate{
+	0% {
+		transform: translate(-50%,-50%) scale(0);
+	}
+  100% {
+		transform: translate(-50%,-50%) scale(1);
+	}
+}
+
+.mod-modal .mod-modal-container .mod-modal-content{
+	padding: 50rpx 65rpx;
+}
+
+.mod-modal .mod-modal-container .title{
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 35rpx;
+}
+
+.mod-modal .mod-modal-container .content{
+   min-height: 30rpx;
+}
+
+.mod-modal .mod-modal-container .footer{
+	height: 99rpx;
+	line-height: 99rpx;
+	font-size: 30rpx;
+	border-top: 1rpx solid #e5e5e5;
+}
+
+.mod-modal .mod-modal-container .footer .cancel{
+	border-right: 1rpx solid #e5e5e5;
+}
+
+.mod-modal .mod-modal-container .footer .cancel,
+.mod-modal .mod-modal-container .footer .confirm{
+	text-align: center;
+	font-weight: bold;
+}

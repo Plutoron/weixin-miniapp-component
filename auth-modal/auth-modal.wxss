@@ -1,0 +1,12 @@
+.auth-modal .custom-confirm{
+  background: #fff;
+	color: #0BB20C;
+}
+
+.auth-modal .custom-confirm::after{
+  content: none;
+}
+
+.auth-modal .custom-content .sub{
+	border-top: 1rpx solid #e5e5e5;
+}

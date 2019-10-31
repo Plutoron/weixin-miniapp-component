@@ -1,0 +1,38 @@
+<view class="mod-massage tac">
+	<icon 
+	  class="icon"
+		type="{{type}}"
+		size="90"
+	/>
+
+	<view class="title fc3" >
+	  <block wx:if="{{titleList.length > 0}}">
+			<view wx:for="{{titleList}}" wx:key="{{key}}">{{item}}</view>
+		</block>
+
+		<block wx:else>
+			<rich-text nodes="{{title}}" />
+		</block>
+	</view>
+
+	<view class="sub-title fs28 fc9">
+		<block wx:if="{{subTitleList.length > 0}}">
+			<view wx:for="{{subTitleList}}" wx:key="{{key}}">{{item}}</view>
+		</block>
+
+		<block wx:else>
+			<rich-text nodes="{{subTitle}}"/>
+		</block>
+	</view>
+	
+	<button
+	  wx:if="{{!mainButton.disabled}}"
+	  class="theme-btn m30"
+		bindtap="_bindMainButton"
+	>{{mainButton.buttonText}}</button>
+	<button 
+	  wx:if="{{!subButton.disabled}}"
+		class="m30"
+		bindtap="_bindSubButton"
+	>{{subButton.buttonText}}</button>
+</view>

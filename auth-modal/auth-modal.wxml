@@ -1,0 +1,21 @@
+<modal 
+  class="auth-modal"
+	title="温馨提示"
+	showModal="{{showModal}}"
+	confirm="custom"
+	bindcancel="_bindcancel"
+> 
+	<view
+		slot="content"
+		class="custom-content"
+	>
+		<view class="fs30">控申在线需要获取您的以下信息：</view>
+		<view class="fs24 sub mt20 pt20 fc9">获取您的公开信息（昵称、头像等）</view>
+	</view>
+	<button 
+		slot="confirm"
+		class="custom-confirm fs30 FBH FBAC FBJC h100"  
+		open-type="getUserInfo"
+		bindgetuserinfo="_bindgetuserinfo" 
+	>立即授权</button>
+</modal>

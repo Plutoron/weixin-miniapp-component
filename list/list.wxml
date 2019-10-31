@@ -1,0 +1,3 @@
+<view class="mod-list {{className}} {{plain ? '' : 'BGF'}}">
+	<slot />
+</view>

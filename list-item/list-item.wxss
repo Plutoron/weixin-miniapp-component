@@ -1,0 +1,91 @@
+.mod-list-item{
+	min-height: 90rpx;
+	line-height: 30rpx;
+	font-size: 30rpx;
+	overflow-x: hidden;
+}
+
+.mod-list-item::before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 30rpx;
+	height: 20rpx;
+	width: 20rpx;
+	border-radius: 50%;
+	background-color: #F43530;
+	transform: translateY(-50%);
+}
+
+.mod-list-item::after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 30rpx;
+	height: 12rpx;
+	width: 12rpx;
+	border-width: 4rpx 4rpx 0 0;
+	border-color: #C8C8CD;
+	border-style: solid;
+	transform: translateY(-50%) rotate(45deg);
+}
+
+.mod-list-item.array-normal::after{
+	right: 1rpx;
+}
+
+.mod-list-item.hide-red-dot::before{
+	content: none;
+}
+
+.mod-list-item.hide-array::after{
+	content: none;
+}
+
+.mod-list-item.show-array,
+.mod-list-item.show-red-dot
+{
+	padding-right: 50rpx;
+}
+
+.mod-list-item.show-array::before{
+	right: 70rpx;
+}
+
+.mod-list-item.show-array.show-red-dot{
+	padding-right: 100rpx;
+}
+
+.mod-list-item .title{
+	min-width: 120rpx;
+}
+
+.mod-list-item .title,
+.mod-list-item .sub-title{
+	line-height: 45rpx;
+}
+
+.mod-list-item .sub-title.wrap{
+  word-break: break-all;
+}
+
+.mod-list-item .placeholder{
+	font-size: 28rpx;
+} 
+
+.mod-list-item .border-bottom{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1rpx;
+	border-top: 1rpx solid #e5e5e5;
+	color: #e5e5e5;
+}
+
+.mod-list-item .border-bottom.indent{
+	left: 30rpx;
+}
+.mod-list-item.last .border-bottom{
+	display: none
+}

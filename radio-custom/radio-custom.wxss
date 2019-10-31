@@ -1,0 +1,34 @@
+.mod-radio.normal .radio-item{
+	position: relative;
+	width: 100%;
+  padding: 30rpx;
+	line-height: 38rpx;
+	overflow-x: hidden;
+}
+
+.mod-radio.normal .radio-item .border-bottom{
+  position: absolute;
+	left: 30rpx;
+	bottom: 0;
+	width: 100%;
+	height: 1rpx;
+	border-top: 1rpx solid #e5e5e5;
+	color: #e5e5e5;
+}
+
+.mod-radio .radio-item .icon{
+	width: 36rpx;
+	height: 36rpx;
+	border-radius: 50%;
+	border: 1rpx solid #e5e5e5;
+}
+
+.mod-radio .radio-item.select .icon{
+	background: #006bff;
+	border: none;
+}
+
+.mod-radio .radio-item.select .icon .check{
+	height: 26rpx;
+	width: 26rpx;
+}

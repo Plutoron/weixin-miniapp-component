@@ -1,0 +1,26 @@
+<view class="upload p30 fs28 {{className}} {{plain ? '' : 'BGF'}}"> 
+  <view wx:if="{{title || titleTip}}" class="title {{required ? 'required' : ''}} fc3 mb30">{{title}} <text class="tip">{{titleTip}}</text></view>
+  <view class="content">
+    <view 
+      class="img" 
+      style="margin-right: {{index === 4 || index === 9 ? 0 : '22.5rpx'}}" 
+      wx:for="{{images}}" 
+      wx:key="index" 
+      wx:for-item="src"
+      bindtap="_preview"
+      bindlongpress="_del"
+      data-index="{{index}}"
+      data-url="{{src}}"
+    >
+      <image src="{{src}}" />
+    </view>
+    <view wx:if="{{!showMod && images.length < 10}}" class="btn" bindtap="_chooseImg">
+      <view class="plus" />  
+      <text class="text">上传</text>
+    </view>
+  </view>
+
+  <view wx:if="{{contentTip}}" class="tip">{{contentTip}}</view>
+
+	<slot name="otherText" />
+</view>

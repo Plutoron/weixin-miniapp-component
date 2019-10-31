@@ -1,0 +1,38 @@
+@import "/app.wxss";
+
+.mod-notice-answer{
+	/* position: fixed;
+	bottom: 0; */
+	z-index: 10;
+}
+
+.mod-notice-answer .notice-answer-mask{
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 5;
+	background-color: rgba(0,0,0,.65);
+}
+
+.mod-notice-answer .title{
+	height: 70rpx;
+}
+
+.mod-notice-answer .title .close{
+	width: 50rpx;
+	height: 100%;
+  font-size: 36rpx;
+	text-align: right
+}
+
+.mod-notice-answer .content{
+	background-color: #F6F6F7;
+	overflow-y: auto;
+}
+
+.mod-notice-answer .theme-btn{
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 36rpx;
+}

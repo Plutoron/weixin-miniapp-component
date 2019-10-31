@@ -1,0 +1,15 @@
+.mod-massage .icon{
+	margin-top: 110rpx;
+}
+
+.mod-massage .title{
+	margin-top: 30rpx;
+	font-size: 40rpx;
+}
+
+.mod-massage .sub-title{
+	margin-top: 30rpx;
+	margin-bottom: 70rpx;
+	padding: 0 50rpx;
+	line-height: 45rpx;
+}

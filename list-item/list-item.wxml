@@ -1,0 +1,68 @@
+<view 
+	class="FBH {{type === 'text' && wrap ? 'FBAS' : 'FBAC'}} {{type === 'picker' ? 'FBJB' : '' }} {{paddingType === 'indent' ? 'pl30 pr30' : 'array-normal'}} pt20 pb20 PR mod-list-item {{array ? 'show-array' : 'hide-array'}} {{redDot ? 'show-red-dot' : 'hide-red-dot'}} {{last ? 'last' : ''}} {{className}} {{plain ? '' : 'BGF'}}"
+>
+	<block wx:if="{{type === 'text'}}">
+	  <slot name="icon" />
+    <view 
+			class="mr30 fc3 title"
+			style="color: {{titleColor || '#333'}}"
+		>{{title}}</view>
+		<view 
+			class="FB1 fcb2 sub-title {{align === 'left' ? 'tal' : 'tar'}} {{wrap ? 'wrap' : 'omit'}}"
+			style="color: {{subTitleColor || '#b2b2b2'}}"
+		>{{subTitle}}</view>
+
+	</block>
+	<block wx:elif="{{type === 'input'}}">
+		<view class="title mr30">{{title}}</view>
+		<view class="input-content fc6 FB1 FBH FBAC">
+			<input
+				class="input FB1"
+				value="{{value}}"
+				type="{{inputType}}"
+				confirm-type="{{confirmType}}"
+				password="{{password}}"
+				maxlength="{{maxlength}}"
+				disabled="{{disabled}}"
+				placeholder="{{placeholder}}" 
+				placeholder-class="fcb2"
+				bindinput="_bindinput"
+				bindconfirm="_bindconfirm"
+			/>
+		</view>
+	</block>
+
+	<block wx:elif="{{type === 'picker'}}">
+		<view class="title">{{title}}</view>
+		<picker 
+		  mode="{{mode}}"
+	    value="{{value}}" 
+			range="{{range}}"
+			range-key="{{rangeKey}}"
+			start="{{start}}"
+			end="{{end}}"
+			custom-item="{{customItem}}"
+			bindchange="_bindPickerChange" 
+			bindcancel="_bindPickerCancel"
+		>
+			<view class="fc9 mr16">
+			  {{pickerContent || placeholder}}
+			</view>
+		</picker>
+	</block>
+
+	<block wx:elif="{{type === 'custom'}}">
+	  <view 
+		  wx:if="{{title}}"
+			class="mr30 fc3 title"
+			style="color: {{titleColor || '#333'}}"
+		>{{title}}</view>
+		<slot />
+	</block>
+
+	<block wx:else>
+		type可选 text/input/picker
+	</block>
+
+	<view class="border-bottom {{borderType === 'indent' ? 'indent' : ''}}" />
+</view>

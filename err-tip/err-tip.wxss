@@ -1,0 +1,9 @@
+@import "/app.wxss";
+
+.mod-err-tip{
+	transform: translateZ(0);
+	text-align: center;
+	color: #FFF;
+	z-index: 5000;
+	background-color: #E64340;
+}

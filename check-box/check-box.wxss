@@ -1,0 +1,35 @@
+.mod-checkbox.normal .checkbox-item{
+	position: relative;
+	width: 100%;
+  padding: 30rpx;
+	line-height: 38rpx;
+	overflow-x: hidden;
+}
+
+.mod-checkbox.normal .checkbox-item .border-bottom{
+  position: absolute;
+	left: 30rpx;
+	bottom: 0;
+	width: 100%;
+	height: 1rpx;
+	border-top: 1rpx solid #e5e5e5;
+	color: #e5e5e5;
+}
+
+.mod-checkbox .checkbox-item .icon{
+	width: 30rpx;
+	height: 30rpx;
+	border-radius: 5rpx;
+	margin-top: 4rpx;
+	border: 1rpx solid #e5e5e5;
+}
+
+.mod-checkbox .checkbox-item.select .icon{
+	background: #006bff;
+	border: none;
+}
+
+.mod-checkbox .checkbox-item.select .icon .check{
+	height: 22rpx;
+	width: 22rpx;
+}

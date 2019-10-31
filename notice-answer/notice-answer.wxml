@@ -1,0 +1,29 @@
+<view class="mod-notice-answer fixed-full-screen">
+  <view class="notice-answer-mask PA" bindtap="_bindClose" />
+	<view class="PA BGF FBV FBJB w100" style="height: {{height}}px; bottom: 0; z-index: 6;">
+		<view class="title FBH FBJB FBAC fs26 pr30 pl30 pb10 pt10">
+			<text>{{title}}</text> 
+			<view wx:if="{{!hideClose}}" class="close" bindtap="_bindClose">×</view> 
+		</view>
+		<view class="content FB1 p30 fc9">
+			<!-- {{content}} -->
+			<block wx:if="{{contentList.length > 0}}">
+				<view 
+					wx:for="{{contentList}}"
+					wx:key="index"
+				>
+					{{item}}
+				</view>
+			</block>
+			
+			<block wx:else>
+				<rich-text nodes="{{content}}"></rich-text>
+			</block>
+		</view>
+		<button 
+			class="theme-btn mr30 ml30 mt20 mb20"
+			bindtap="_bindConfirm"
+		>{{buttonText}}</button>
+	</view>
+</view>
+

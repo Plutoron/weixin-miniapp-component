@@ -1,0 +1,77 @@
+<view 
+  wx:if="{{showModal}}"
+	class="mod-modal fixed-full-screen"
+	catchtap="_catchMask"
+>
+	<view 
+		class="mod-modal-container BGF radius12"
+		catchtap="_catchContainer"
+	>
+	  <block wx:if="{{!customModal}}">
+			<view class="mod-modal-content">
+				<block wx:if="{{title}}">
+					<view 
+						class="title fs32" 
+						style="color: {{titleColor}}"
+					>
+						{{title}}
+					</view>
+				</block>
+
+				<block wx:else> 
+					<slot name="title" />
+				</block>
+
+				<block wx:if="{{content}}">
+					<view 
+						class="content fs32"
+						style="color: {{contentColor}}"
+					>
+						{{content}}
+					</view>
+				</block>
+
+				<block wx:else> 
+					<slot name="content" />
+				</block>
+			</view>
+		</block>
+
+		<block wx:else>
+			<slot name="customModal" />
+		</block>
+		
+	  <view class="footer FBH tac" wx:if="{{footer !== 'none'}}">
+			<block wx:if="{{footer === 'default'}}">
+			  <view 
+				  wx:if="{{showCancel}}"
+				  class="cancel FB1"
+			    style="color: {{cancelColor}}"
+					catchtap="_bindButton"
+					data-type="cancel"
+				>{{cancelText}}</view>
+			
+				<block wx:if="{{confirm === 'default'}}">
+					<view 
+						class="confirm FB1 omit"
+						style="color: {{confirmColor}}"
+						catchtap="_bindButton"
+						data-type="confirm"
+					>{{confirmText}}</view>
+				</block>
+
+				<block wx:elif="{{confirm === 'custom'}}"> 
+					<view class="FB1"><slot name="confirm" /></view>
+				</block>
+
+				<block wx:else> 
+					<view>confirm参数值错误</view>
+				</block>
+			</block>
+
+			<block wx:elif="{{footer === 'custom'}}"> 
+				<slot name="footer" />
+			</block>
+		</view>
+	</view>
+</view>

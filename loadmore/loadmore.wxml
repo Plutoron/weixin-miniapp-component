@@ -1,0 +1,4 @@
+<view class="mod-loadmore FBH FBAC FBJC">
+	<view wx:if="loading" class="icon mr16" />
+	<view>{{content}}</view>
+</view>

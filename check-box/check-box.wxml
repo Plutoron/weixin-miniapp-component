@@ -1,0 +1,49 @@
+<view class="mod-checkbox w100 {{layout === 'flex' ? 'FBH FBW' : 'normal'}} {{className}} FBJS {{plain ? '' : 'BGF'}}">
+  <block wx:if="{{layout === 'normal'}}">
+		<view
+			wx:for="{{items}}"
+			wx:key="label"
+			wx:for-index="idx"
+			class="checkbox-item FBH fc9 {{item.select ? 'select' : ''}}"
+			bindtap="_bindCheckboxItem"
+			data-index="{{idx}}"
+		>
+			<view class="icon mr20 FBH FBAC FBJC">
+				<image 
+					wx:if="{{item.select}}" 
+					src="../../images/check.svg" 
+					class="check"
+				/>
+			</view>
+			<view class="fs28 FB1">
+				{{item[alias]}}
+				<text wx:if="{{item.comment}}" class="fw200">{{item.comment}}</text>
+			</view>
+			<view wx:if="{{idx !== dataSource.length - 1}}" class="border-bottom" />
+		</view>
+	</block>
+
+  <block wx:if="{{layout === 'flex'}}">
+	  <view
+			wx:for="{{items}}"
+			wx:key="label"
+			bindtap="_bindCheckboxItem"
+			wx:for-index="idx"
+			data-index="{{idx}}"
+			class="checkbox-item FBH FBAC pl30 mb20 fc9 {{item.select ? 'select' : ''}}"
+			style="width: {{perLineNum === 2 ? '50%' : '33%'}}"
+		>
+			<view class="icon mr20 FBH FBAC FBJC">
+				<image 
+					wx:if="{{item.select}}" 
+					src="../../images/check.svg" 
+					class="check"
+				/>
+			</view>
+			<view class="fs28 FB1 omit">
+				{{item[alias]}}
+				<text wx:if="{{item.comment}}" class="fw200">{{item.comment}}</text>
+			</view>
+		</view>
+	</block>
+</view>

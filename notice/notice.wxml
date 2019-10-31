@@ -1,0 +1,8 @@
+<view 
+	class="mod-notice fixed-top left0 right0 FBH FBJB FBAC fs30 pl30 pr30"
+	wx:if="{{show}}"
+>
+  <view class="icon mr20"><image class="w100 h100" src="../../images/info.svg" /></view>
+	<view class="FB1 omit" bindtap="_bindContent">{{content}}</view>
+	<view wx:if="{{!hideClose}}" class="close FBH FBAC FBJE" bindtap="_bindClose">×</view> 
+</view>

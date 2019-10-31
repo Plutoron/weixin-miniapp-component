@@ -1,0 +1,15 @@
+<view class="p30 mod-textarea w100 {{className}} {{plain ? '' : 'BGF'}}">
+	<block wx:if="{{showMod}}">
+		{{content}}
+	</block>
+
+	<block wx:else>
+		<textarea
+			value="{{content}}"
+			placeholder="{{placeholder}}"
+			placeholder-class="fcb2"
+			bindinput="_bindInput"
+			maxlength="{{maxlength}}"
+		/>
+	</block>
+</view>

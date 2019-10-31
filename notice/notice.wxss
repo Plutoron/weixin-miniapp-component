@@ -1,0 +1,17 @@
+.mod-notice{
+	height: 70rpx;
+	background-color: rgba(0, 0, 0, .6);
+	color: #4F9BFF;
+}
+
+.mod-notice .icon{
+	width: 31rpx;
+	height: 32rpx;
+}
+
+.mod-notice .close{
+	width: 50rpx;
+	height: 100%;
+  font-size: 40rpx;
+	transform: translateY(-2rpx);
+}
